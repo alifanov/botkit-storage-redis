@@ -36,7 +36,7 @@ module.exports = function(config) {
  */
 function getStorageObj(client, namespace) {
     return {
-        get: function(id, cb) {
+        read: function(id, cb) {
             client.hget(namespace, id, function(err, res) {
                 cb(err, res ? JSON.parse(res) : null);
             });
